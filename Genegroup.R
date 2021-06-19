@@ -11,7 +11,8 @@ Genegroup <- function(Path){
     newname <- sub('.bed','',gene_name)
     
     gene <- read_plink(paste0(Path,'/',newname))
-    gene_list[[newname]] <- gene$bed[,apply(gene$bed,2,sd)!=0]
+    gene_list[[newname]] <- gene$bed[,]
+    #gene_list[[newname]] <- gene$bed[,apply(gene$bed,2,sd)!=0]
   }
   invisible(gene_list)
 }
